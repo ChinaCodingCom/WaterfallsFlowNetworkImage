@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZOz-M0-klT" customClass="MainCell">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BxA-q3-O7V"/>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="BxA-q3-O7V" firstAttribute="leading" secondItem="ZOz-M0-klT" secondAttribute="leading" id="BK9-BW-NIt"/>
+                <constraint firstAttribute="trailing" secondItem="BxA-q3-O7V" secondAttribute="trailing" id="CNg-nC-gFp"/>
+                <constraint firstAttribute="bottom" secondItem="BxA-q3-O7V" secondAttribute="bottom" id="eYi-MQ-gkx"/>
+                <constraint firstItem="BxA-q3-O7V" firstAttribute="top" secondItem="ZOz-M0-klT" secondAttribute="top" id="iof-bU-PM2"/>
+            </constraints>
+            <connections>
+                <outlet property="mainImgv" destination="BxA-q3-O7V" id="VXp-gE-CmL"/>
+            </connections>
+            <point key="canvasLocation" x="257" y="404"/>
+        </collectionViewCell>
+    </objects>
+</document>
