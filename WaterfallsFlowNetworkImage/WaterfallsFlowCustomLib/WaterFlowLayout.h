@@ -20,7 +20,6 @@
 @end
 
 @interface WaterFlowLayout : UICollectionViewFlowLayout
-
 @property (nonatomic, weak) id<WaterFlowLayoutDelegate> delegate;
 
 @end

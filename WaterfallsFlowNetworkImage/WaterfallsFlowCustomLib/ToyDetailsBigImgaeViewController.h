@@ -10,7 +10,6 @@
 
 @interface ToyDetailsBigImgaeViewController : UIViewController
 
-
 @property (nonatomic,copy) NSString *url;
 
 

@@ -69,7 +69,6 @@
     //self.backgroundScrollView.showsHorizontalScrollIndicator = NO;
     //self.backgroundScrollView.showsVerticalScrollIndicator = NO;
     
-
     WaterFlowLayout *flowOut = [[WaterFlowLayout alloc] init];
     flowOut.delegate = self;
     
@@ -174,8 +173,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
+
     MainModel *model = _dataArray[indexPath.row];
     NSInteger lineNum = [self collectionView:_collectionView numberOfLineForSection:0];
     CGFloat width = ((SCREEN_W - 10) - (lineNum - 1) * 5) / lineNum;
@@ -202,27 +200,15 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
         cellCurrentHight = 0;
         
         for (NSNumber *cellHightNumber  in otherCellHightArray) {
-            
-            
             CGFloat cellHightFloat = [cellHightNumber floatValue];
-            
             cellCurrentHight += cellHightFloat;
-            
-            
-            
             if (indexPath.row == 0) {
-                
                imageMAXHight = cellHightFloat;
-                
             }
             
             if (imageMAXHight < cellHightFloat) {
-                
                 imageMAXHight = cellHightFloat;
-                
             }
-            
-            
         }
         
         cellCurrentHight = cellCurrentHight / lines;
@@ -232,37 +218,24 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
             cellCurrentHight = imageMAXHight;
         }
 
-        
         NSLog(@"cellCurrentHight = %f",cellCurrentHight);
         
         //赋值
         self.backgroundScrollView.contentSize = CGSizeMake(SCREEN_W, cellCurrentHight + 64 + 40 + 40);
         _collectionView.frame = CGRectMake(0, 0, SCREEN_W, cellCurrentHight + 64 + 40 + 40);
-        
         NSLog(@"cellCurrentHight = %f",cellCurrentHight);
-        
         return CGSizeMake(width, width / imageSize.width * imageSize.height);
-        
     }
-
-    
     return CGSizeMake(width, 300);
-    
 }
-
-
-
 
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NSLog(@"点击了第%ld个", indexPath.row);
-    
     ToyDetailsBigImgaeViewController *toyDetailsBigImgaeVC = [[ToyDetailsBigImgaeViewController alloc] init];
     NSString *url = _imagArray[indexPath.row];
     toyDetailsBigImgaeVC.url = url;
     [self.navigationController pushViewController:toyDetailsBigImgaeVC animated:NO];
-    
-    
 }
 
 #pragma mark - WaterFlowout代理，请填入返回多少列
@@ -271,13 +244,10 @@ didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     return lines;
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
 
@@ -299,7 +269,7 @@ didSelectItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
 }
 
 - (void)dealloc {
-    NSLog(@"=======%@ =%@ deallloc",self ,[self class]);
+    NSLog(@"self = %@ [self class] = %@",self ,[self class]);
 }
 
 @end
